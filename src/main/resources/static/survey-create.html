@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey erstellen</title>
+    <link rel="stylesheet" href="/css/survey-create.css">
+</head>
+<body>
+
+<h1>Neues Survey erstellen</h1>
+
+<label>Titel:</label>
+<input type="text" id="title">
+
+<label>Beschreibung:</label>
+<textarea id="description"></textarea>
+
+<label>Startdatum:</label>
+<input type="date" id="startDate">
+
+<label>Enddatum:</label>
+<input type="date" id="endDate">
+
+<label>Status:</label>
+<select id="status">
+    <option value="DRAFT">DRAFT</option>
+    <option value="ACTIVE">ACTIVE</option>
+    <option value="CLOSED">CLOSED</option>
+    <option value="CANCELLED">CANCELLED</option>
+</select>
+
+<h2>Fragen</h2>
+<div id="questionsContainer"></div>
+<button type="button" id="addQuestionBtn">Frage hinzufügen</button>
+
+<p id="errorBox" class="error"></p>
+
+<button type="button" id="submitBtn">Survey erstellen</button>
+
+<script src="/js/survey-create.js"></script>
+</body>
+</html>
