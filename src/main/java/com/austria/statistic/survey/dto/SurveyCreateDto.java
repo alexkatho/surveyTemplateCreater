@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.austria.statistic.survey.SurveyStatus;
 import com.austria.statistic.survey.question.dto.QuestionCreateDto;
+import com.austria.statistic.survey.validation.annotation.ValidSurveyDates;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.FutureOrPresent;
@@ -22,20 +23,25 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ValidSurveyDates
 public class SurveyCreateDto {
-	@NotBlank (message = "Titel darf nicht leer sein!")
-    private String title;
-	@NotBlank(message = "Beschreibung darf nicht leer sein!")
-    private String description;
-	@NotNull (message = "Startdatum ist Pflicht")
-	@FutureOrPresent
-    private LocalDate startDate;
-	@NotNull (message = "Enddatum ist Pflicht")
-	@FutureOrPresent
-    private LocalDate endDate;
-	@NotNull(message = "Status ist Pflicht")
-    private SurveyStatus status; // optional, z.B. DRAFT als Default
-	@Size(min = 1, message = "Mindest 1 Frage der Survey hinzufügen")
-    private List<@Valid QuestionCreateDto> questions; // optional
-}
+	@NotBlank(message = "Titel darf nicht leer sein!")
+	private String title;
 
+	@NotBlank(message = "Beschreibung darf nicht leer sein!")
+	private String description;
+	
+	@NotNull(message = "Startdatum ist Pflicht")
+	@FutureOrPresent
+	private LocalDate startDate;
+	
+	@NotNull(message = "Enddatum ist Pflicht")
+	@FutureOrPresent
+	private LocalDate endDate;
+	
+	@NotNull(message = "Status ist Pflicht")
+	private SurveyStatus status; // optional, z.B. DRAFT als Default
+	
+	@Size(min = 1, message = "Mindest 1 Frage der Survey hinzufügen")
+	private List<@Valid QuestionCreateDto> questions; // optional
+}

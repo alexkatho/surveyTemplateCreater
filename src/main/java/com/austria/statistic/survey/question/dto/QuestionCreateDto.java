@@ -4,7 +4,9 @@ import java.util.List;
 
 import com.austria.statistic.survey.answer.dto.AnswerOptionCreateDto;
 import com.austria.statistic.survey.question.QuestionType;
+import com.austria.statistic.survey.validation.annotation.ValidQuestionsOptions;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -19,6 +21,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@ValidQuestionsOptions
 public class QuestionCreateDto {
 
 	@NotBlank (message = "Text darf nicht leer sein!")
@@ -29,6 +32,7 @@ public class QuestionCreateDto {
     private Boolean required; // optional
 	@Positive(message = "Position muss > 0 sein ")
     private Integer position; // opt
+	@Valid
 	private List<AnswerOptionCreateDto> options;
 
 }
