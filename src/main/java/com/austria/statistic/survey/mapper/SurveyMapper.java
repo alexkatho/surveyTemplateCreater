@@ -5,26 +5,26 @@ import java.util.stream.Collectors;
 
 import org.springframework.data.domain.Page;
 
-import com.austria.statistic.survey.domain.Survey;
 import com.austria.statistic.survey.domain.SurveyStatus;
 import com.austria.statistic.survey.dto.SurveyCreateDto;
 import com.austria.statistic.survey.dto.SurveyDetailDto;
 import com.austria.statistic.survey.dto.SurveyListDto;
+import com.austria.statistic.survey.persistance.SurveyEntity;
 import com.austria.statistic.survey.question.QuestionMapper;
 import com.austria.statistic.survey.question.dto.QuestionDto;
 
 public class SurveyMapper<Q> {
 
-	public static SurveyListDto toDto(Survey survey) {
+	public static SurveyListDto toDto(SurveyEntity survey) {
 		return new SurveyListDto(survey.getId(), survey.getTitle(), survey.getStartDate(), survey.getEndDate());
 	}
 	
-	public static Page<SurveyListDto> toPageDto(Page<Survey> surveyPage) {
+	public static Page<SurveyListDto> toPageDto(Page<SurveyEntity> surveyPage) {
 	    return surveyPage.map(SurveyMapper::toDto);
 	}
 
 	
-	public static SurveyDetailDto<QuestionDto> toDetailDto(Survey survey){
+	public static SurveyDetailDto<QuestionDto> toDetailDto(SurveyEntity survey){
 		 List<QuestionDto> questions = survey.getQuestions().stream()
 	                .map(QuestionMapper::toDto)
 	                .toList();
@@ -40,8 +40,8 @@ public class SurveyMapper<Q> {
 		
 	}
 	
-	public static Survey toEntity(SurveyCreateDto dto) {
-        Survey survey = Survey.builder()
+	public static SurveyEntity toEntity(SurveyCreateDto dto) {
+        SurveyEntity survey = SurveyEntity.builder()
                 .title(dto.getTitle())
                 .description(dto.getDescription())
                 .startDate(dto.getStartDate())

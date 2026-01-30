@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.austria.statistic.survey.answer.AnswerOption;
 import com.austria.statistic.survey.answer.AnswerOptionMapper;
-import com.austria.statistic.survey.domain.Survey;
+import com.austria.statistic.survey.persistance.SurveyEntity;
 import com.austria.statistic.survey.question.dto.QuestionCreateDto;
 import com.austria.statistic.survey.question.dto.QuestionDto;
 
@@ -22,7 +22,7 @@ public class QuestionMapper {
 		return result;
 	}
 
-	public static Question toEntity(QuestionCreateDto created, Survey survey) {
+	public static Question toEntity(QuestionCreateDto created, SurveyEntity survey) {
 		Question entity = Question.builder().position(created.getPosition()).required(created.getRequired())
 				.text(created.getText()).type(created.getType()).survey(survey).build();
 

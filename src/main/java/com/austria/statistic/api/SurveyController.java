@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.austria.statistic.survey.domain.Survey;
 import com.austria.statistic.survey.dto.SurveyCreateDto;
 import com.austria.statistic.survey.dto.SurveyDetailDto;
 import com.austria.statistic.survey.dto.SurveyListDto;
 import com.austria.statistic.survey.mapper.SurveyMapper;
+import com.austria.statistic.survey.persistance.SurveyEntity;
 import com.austria.statistic.survey.question.dto.QuestionDto;
 import com.austria.statistic.survey.service.SurveyService;
 
@@ -42,7 +42,7 @@ public class SurveyController {
 	
 	@PostMapping
 	public SurveyDetailDto<QuestionDto> createSurvey(@Valid @RequestBody SurveyCreateDto dto) {
-	    Survey saved = surveyService.createSurvey(dto);
+	    SurveyEntity saved = surveyService.createSurvey(dto);
 	    return SurveyMapper.toDetailDto(saved);
 	}
 

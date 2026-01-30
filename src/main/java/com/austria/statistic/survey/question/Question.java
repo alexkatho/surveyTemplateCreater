@@ -3,7 +3,7 @@ package com.austria.statistic.survey.question;
 import java.util.List;
 
 import com.austria.statistic.survey.answer.AnswerOption;
-import com.austria.statistic.survey.domain.Survey;
+import com.austria.statistic.survey.persistance.SurveyEntity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -51,7 +51,7 @@ public class Question {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "survey_id", nullable = false)
-	private Survey survey;
+	private SurveyEntity survey;
 	
 	@OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
 	@OrderBy("position ASC")

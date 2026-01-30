@@ -5,14 +5,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 
 import com.austria.statistic.statistics.Statistics;
-import com.austria.statistic.survey.domain.Survey;
 import com.austria.statistic.survey.domain.SurveyStatus;
+import com.austria.statistic.survey.persistance.SurveyEntity;
 
-public interface SurveyRepository extends CrudRepository<Survey, Long>{
+public interface SurveyRepository extends CrudRepository<SurveyEntity, Long>{
 	
 	// pagination 
-	Page<Survey> findByStatus(SurveyStatus status, Pageable pageable);
+	Page<SurveyEntity> findByStatus(SurveyStatus status, Pageable pageable);
 	
-	Page<Survey> findAll(Pageable pageable);
+	Page<SurveyEntity> findAll(Pageable pageable);
 
 }
