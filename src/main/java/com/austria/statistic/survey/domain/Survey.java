@@ -1,4 +1,4 @@
-package com.austria.statistic.survey;
+package com.austria.statistic.survey.domain;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

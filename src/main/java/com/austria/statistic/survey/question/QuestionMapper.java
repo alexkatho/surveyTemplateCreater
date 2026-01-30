@@ -3,9 +3,9 @@ package com.austria.statistic.survey.question;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.austria.statistic.survey.Survey;
 import com.austria.statistic.survey.answer.AnswerOption;
 import com.austria.statistic.survey.answer.AnswerOptionMapper;
+import com.austria.statistic.survey.domain.Survey;
 import com.austria.statistic.survey.question.dto.QuestionCreateDto;
 import com.austria.statistic.survey.question.dto.QuestionDto;
 

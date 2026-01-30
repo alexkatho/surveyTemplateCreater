@@ -2,8 +2,8 @@ package com.austria.statistic.survey.question;
 
 import java.util.List;
 
-import com.austria.statistic.survey.Survey;
 import com.austria.statistic.survey.answer.AnswerOption;
+import com.austria.statistic.survey.domain.Survey;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

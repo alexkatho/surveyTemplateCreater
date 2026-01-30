@@ -1,4 +1,4 @@
-package com.austria.statistic.survey;
+package com.austria.statistic.api;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,11 +9,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.austria.statistic.survey.domain.Survey;
 import com.austria.statistic.survey.dto.SurveyCreateDto;
 import com.austria.statistic.survey.dto.SurveyDetailDto;
 import com.austria.statistic.survey.dto.SurveyListDto;
 import com.austria.statistic.survey.mapper.SurveyMapper;
 import com.austria.statistic.survey.question.dto.QuestionDto;
+import com.austria.statistic.survey.service.SurveyService;
 
 import jakarta.validation.Valid;
 

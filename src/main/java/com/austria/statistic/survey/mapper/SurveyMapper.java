@@ -5,8 +5,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.data.domain.Page;
 
-import com.austria.statistic.survey.Survey;
-import com.austria.statistic.survey.SurveyStatus;
+import com.austria.statistic.survey.domain.Survey;
+import com.austria.statistic.survey.domain.SurveyStatus;
 import com.austria.statistic.survey.dto.SurveyCreateDto;
 import com.austria.statistic.survey.dto.SurveyDetailDto;
 import com.austria.statistic.survey.dto.SurveyListDto;

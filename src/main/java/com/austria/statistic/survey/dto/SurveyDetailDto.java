@@ -3,7 +3,7 @@ package com.austria.statistic.survey.dto;
 import java.time.LocalDate;
 import java.util.List;
 
-import com.austria.statistic.survey.SurveyStatus;
+import com.austria.statistic.survey.domain.SurveyStatus;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
