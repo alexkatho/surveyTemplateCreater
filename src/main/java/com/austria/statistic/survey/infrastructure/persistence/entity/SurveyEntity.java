@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import com.austria.statistic.survey.domain.model.SurveyStatus;
-import com.austria.statistic.survey.question.domain.Question;
+import com.austria.statistic.survey.question.infrastructure.persistence.QuestionEntity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -54,7 +54,7 @@ public class SurveyEntity {
 
 	@OneToMany(mappedBy = "survey", cascade = CascadeType.ALL, orphanRemoval = true)
 	@OrderBy("position ASC")
-	private List<Question> questions;
+	private List<QuestionEntity> questions;
 
 	@Column(nullable = false)
 	private LocalDate startDate;

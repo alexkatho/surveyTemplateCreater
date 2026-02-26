@@ -1,63 +1,64 @@
 package com.austria.statistic.survey.question.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import com.austria.statistic.survey.answer.AnswerOption;
-import com.austria.statistic.survey.infrastructure.persistence.entity.SurveyEntity;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OrderBy;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Table(name = "questions", schema = "exam")
 public class Question {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
 
-	@Enumerated(EnumType.STRING)
-	private QuestionType type;
+    private Long id;
+    private final String text;
+    private final QuestionType type;
+    private final int position;
+    private boolean required;
 
-	@Column(nullable = false)
-	private String text;
+    private final List<AnswerOption> options = new ArrayList<>();
 
-	@Column(nullable = false, name = "req")
-	private boolean required;
+    private Question(String text, QuestionType type, int position) {
+        this.text = text;
+        this.type = type;
+        this.position = position;
+        this.required = true;
+    }
 
-	@Column(nullable = false)
-    private Integer position;
+    public static Question create(String text, QuestionType type, int position) {
+        return new Question(text, type, position);
+    }
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "survey_id", nullable = false)
-	private SurveyEntity survey;
-	
-	@OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
-	@OrderBy("position ASC")
-	private List<AnswerOption> options;
-	
-	
+    public void addOption(String label, String value, int position) {
 
+        if (type == QuestionType.TEXT)
+            throw new IllegalStateException("Text question cannot have options");
 
+        options.add(new AnswerOption(label, value, position));
+    }
+    
+    public void isRequiredFalse() {
+    	this.required = false;
+    }
+
+    public List<AnswerOption> getOptions() {
+        return options;
+    }
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public QuestionType getType() {
+		return type;
+	}
+
+	public int getPosition() {
+		return position;
+	}
+    
+	public boolean getRequired() {
+		return required;
+	}
+    
 }

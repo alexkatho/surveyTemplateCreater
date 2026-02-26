@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.austria.statistic.survey.question.domain.Question;
+import com.austria.statistic.survey.question.infrastructure.persistence.QuestionEntity;
 
 import lombok.Getter;
 

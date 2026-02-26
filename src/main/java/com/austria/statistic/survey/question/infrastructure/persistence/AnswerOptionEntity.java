@@ -1,29 +1,27 @@
-package com.austria.statistic.survey.answer;
+package com.austria.statistic.survey.question.infrastructure.persistence;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import com.austria.statistic.survey.question.infrastructure.persistence.QuestionEntity;
-
-import jakarta.persistence.*;
-
+@Entity
+@Table(schema = "exam", name = "answer_options")
 @Getter
+@Builder
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-@Entity
-@Table(schema ="exam",name = "answer_options")
-public class AnswerOption {
+public class AnswerOptionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,11 +31,9 @@ public class AnswerOption {
 
     private String value;
 
-    @Column(nullable = false)
     private int position;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "question_id", nullable = false)
     private QuestionEntity question;
-
 }

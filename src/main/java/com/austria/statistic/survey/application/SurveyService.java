@@ -11,15 +11,16 @@ import com.austria.statistic.survey.infrastructure.persistence.entity.SurveyEnti
 import com.austria.statistic.survey.infrastructure.persistence.repository.SurveyRepository;
 import com.austria.statistic.survey.mapper.SurveyMapper;
 import com.austria.statistic.survey.question.dto.QuestionDto;
-import com.austria.statistic.survey.question.repository.QuestionRepository;
+import com.austria.statistic.survey.question.infrastructure.persistence.JpaQuestionRepository;
+import com.austria.statistic.survey.question.infrastructure.persistence.QuestionJpaRepository;
 
 @Service
 public class SurveyService  <Q>{
 
 	private final SurveyRepository surveyRepo;
-	private final QuestionRepository questionRepo;
+	private final JpaQuestionRepository questionRepo;
 
-	public SurveyService(SurveyRepository surveyRepo, QuestionRepository questionRepo) {
+	public SurveyService(SurveyRepository surveyRepo, JpaQuestionRepository questionRepo) {
 		super();
 		this.surveyRepo = surveyRepo;
 		this.questionRepo = questionRepo;

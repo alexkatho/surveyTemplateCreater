@@ -1,10 +1,12 @@
 package com.austria.statistic.survey.infrastructure.persistence.mapper;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.austria.statistic.survey.domain.model.Survey;
 import com.austria.statistic.survey.domain.model.SurveyDates;
 import com.austria.statistic.survey.infrastructure.persistence.entity.SurveyEntity;
+import com.austria.statistic.survey.question.infrastructure.persistence.QuestionEntity;
 import com.austria.statistic.survey.question.infrastructure.persistence.mapper.QuestionPersistenceMapper;
 
 public class SurveyPersistenceMapper {
@@ -35,8 +37,8 @@ public class SurveyPersistenceMapper {
         entity.setStartDate(domain.getDates().startDate());
         entity.setEndDate(domain.getDates().endDate());
 
-        List var questionEntities = domain.getQuestions().stream()
-                .map(q -> QuestionPersistenceMapper.toEntity(q, entity))
+       List<QuestionEntity> questionEntities = domain.getQuestions().stream()
+                .map(q -> QuestionPersistenceMapper.toEntity(q))
                 .collect(Collectors.toList());
 
         entity.setQuestions(questionEntities);
