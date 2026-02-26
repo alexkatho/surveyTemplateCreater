@@ -5,23 +5,13 @@ import java.util.List;
 
 import com.austria.statistic.survey.domain.model.SurveyStatus;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+public record SurveyDetailDto<Q>(
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class SurveyDetailDto<Q> {
+    Long id,
+    String title,
+    SurveyStatus status,
+    List<Q> questions,
+    LocalDate startDate,
+    LocalDate endDate
 
-	private Long id;
-    private String title;
-    private SurveyStatus status;
-    private List<Q> questions;
-    private LocalDate startDate;
-    private LocalDate endDate;
-}
+) {}

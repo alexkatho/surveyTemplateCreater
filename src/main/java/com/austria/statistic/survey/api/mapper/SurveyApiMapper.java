@@ -42,25 +42,25 @@ public class SurveyApiMapper {
 
     public static Survey toDomain(SurveyCreateDto dto) {
     	 Survey survey = Survey.create(
-                 dto.getTitle(),
-                 dto.getDescription(),
-                 new SurveyDates(dto.getStartDate(), dto.getEndDate())
+                 dto.title(),
+                 dto.description(),
+                 new SurveyDates(dto.startDate(), dto.endDate())
          );
         
     	// question mapper toDo
-        if (dto.getQuestions() != null) {
-            dto.getQuestions().forEach(q ->
+        if (dto.questions() != null) {
+            dto.questions().forEach(q ->
                     survey.addQuestion(
                             QuestionMapper.toDomain(q)
                     )
             );
         }
         
-        if (dto.getStatus() == SurveyStatus.ACTIVE) {
+        if (dto.status() == SurveyStatus.ACTIVE) {
             survey.publish();
         }
 
-        if (dto.getStatus() == SurveyStatus.CLOSED) {
+        if (dto.status() == SurveyStatus.CLOSED) {
             survey.publish();
             survey.close();
         }
