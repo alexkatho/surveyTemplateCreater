@@ -3,7 +3,7 @@ package com.austria.statistic.survey.question;
 import java.util.List;
 
 import com.austria.statistic.survey.answer.AnswerOption;
-import com.austria.statistic.survey.persistance.SurveyEntity;
+import com.austria.statistic.survey.infrastructure.persistence.entity.SurveyEntity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

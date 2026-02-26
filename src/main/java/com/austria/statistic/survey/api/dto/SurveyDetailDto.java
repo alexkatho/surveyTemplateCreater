@@ -1,9 +1,9 @@
-package com.austria.statistic.survey.dto;
+package com.austria.statistic.survey.api.dto;
 
 import java.time.LocalDate;
 import java.util.List;
 
-import com.austria.statistic.survey.domain.SurveyStatus;
+import com.austria.statistic.survey.domain.model.SurveyStatus;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

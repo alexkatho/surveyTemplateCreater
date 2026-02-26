@@ -1,4 +1,4 @@
-package com.austria.statistic.survey.persistance;
+package com.austria.statistic.survey.infrastructure.persistence.entity;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-import com.austria.statistic.survey.domain.SurveyStatus;
+import com.austria.statistic.survey.domain.model.SurveyStatus;
 import com.austria.statistic.survey.question.Question;
 
 import jakarta.persistence.CascadeType;

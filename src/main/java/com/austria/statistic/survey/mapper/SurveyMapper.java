@@ -5,11 +5,11 @@ import java.util.stream.Collectors;
 
 import org.springframework.data.domain.Page;
 
-import com.austria.statistic.survey.domain.SurveyStatus;
-import com.austria.statistic.survey.dto.SurveyCreateDto;
-import com.austria.statistic.survey.dto.SurveyDetailDto;
-import com.austria.statistic.survey.dto.SurveyListDto;
-import com.austria.statistic.survey.persistance.SurveyEntity;
+import com.austria.statistic.survey.api.dto.SurveyCreateDto;
+import com.austria.statistic.survey.api.dto.SurveyDetailDto;
+import com.austria.statistic.survey.api.dto.SurveyListDto;
+import com.austria.statistic.survey.domain.model.SurveyStatus;
+import com.austria.statistic.survey.infrastructure.persistence.entity.SurveyEntity;
 import com.austria.statistic.survey.question.QuestionMapper;
 import com.austria.statistic.survey.question.dto.QuestionDto;
 

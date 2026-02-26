@@ -1,17 +1,17 @@
-package com.austria.statistic.survey.service;
+package com.austria.statistic.survey.application;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.austria.statistic.survey.dto.SurveyCreateDto;
-import com.austria.statistic.survey.dto.SurveyDetailDto;
-import com.austria.statistic.survey.dto.SurveyListDto;
+import com.austria.statistic.survey.api.dto.SurveyCreateDto;
+import com.austria.statistic.survey.api.dto.SurveyDetailDto;
+import com.austria.statistic.survey.api.dto.SurveyListDto;
+import com.austria.statistic.survey.infrastructure.persistence.entity.SurveyEntity;
+import com.austria.statistic.survey.infrastructure.persistence.repository.SurveyRepository;
 import com.austria.statistic.survey.mapper.SurveyMapper;
-import com.austria.statistic.survey.persistance.SurveyEntity;
 import com.austria.statistic.survey.question.dto.QuestionDto;
 import com.austria.statistic.survey.question.repository.QuestionRepository;
-import com.austria.statistic.survey.repository.SurveyRepository;
 
 @Service
 public class SurveyService  <Q>{

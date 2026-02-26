@@ -1,4 +1,4 @@
-package com.austria.statistic.survey.domain;
+package com.austria.statistic.survey.domain.model;
 
 public enum SurveyStatus {
     DRAFT,

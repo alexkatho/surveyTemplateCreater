@@ -1,6 +1,6 @@
 package com.austria.statistic.survey.validation.validator;
 
-import com.austria.statistic.survey.dto.SurveyCreateDto;
+import com.austria.statistic.survey.api.dto.SurveyCreateDto;
 import com.austria.statistic.survey.validation.annotation.ValidSurveyDates;
 
 import jakarta.validation.ConstraintValidator;

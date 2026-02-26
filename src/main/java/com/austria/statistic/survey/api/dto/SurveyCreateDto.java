@@ -1,9 +1,9 @@
-package com.austria.statistic.survey.dto;
+package com.austria.statistic.survey.api.dto;
 
 import java.time.LocalDate;
 import java.util.List;
 
-import com.austria.statistic.survey.domain.SurveyStatus;
+import com.austria.statistic.survey.domain.model.SurveyStatus;
 import com.austria.statistic.survey.question.dto.QuestionCreateDto;
 import com.austria.statistic.survey.validation.annotation.ValidSurveyDates;
 
@@ -42,6 +42,6 @@ public class SurveyCreateDto {
 	@NotNull(message = "Status ist Pflicht")
 	private SurveyStatus status; // optional, z.B. DRAFT als Default
 	
-	@Size(min = 1, message = "Mindest 1 Frage der Survey hinzufügen")
+	@Size(min = 1, message = "Mindestens 1 Frage der Survey hinzufügen")
 	private List<@Valid QuestionCreateDto> questions; // optional
 }
