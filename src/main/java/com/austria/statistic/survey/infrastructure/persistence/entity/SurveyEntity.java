@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import com.austria.statistic.survey.domain.model.SurveyStatus;
-import com.austria.statistic.survey.question.Question;
+import com.austria.statistic.survey.question.domain.Question;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

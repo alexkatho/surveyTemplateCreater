@@ -6,6 +6,8 @@ import java.util.List;
 import com.austria.statistic.survey.answer.AnswerOption;
 import com.austria.statistic.survey.answer.AnswerOptionMapper;
 import com.austria.statistic.survey.infrastructure.persistence.entity.SurveyEntity;
+import com.austria.statistic.survey.question.domain.Question;
+import com.austria.statistic.survey.question.domain.QuestionType;
 import com.austria.statistic.survey.question.dto.QuestionCreateDto;
 import com.austria.statistic.survey.question.dto.QuestionDto;
 

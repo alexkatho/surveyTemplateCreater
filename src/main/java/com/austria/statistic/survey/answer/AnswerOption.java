@@ -1,7 +1,5 @@
 package com.austria.statistic.survey.answer;
 
-import com.austria.statistic.survey.question.Question;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -13,6 +11,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import com.austria.statistic.survey.question.domain.Question;
+
 import jakarta.persistence.*;
 
 @Getter

@@ -3,7 +3,7 @@ package com.austria.statistic.survey.question.dto;
 import java.util.List;
 
 import com.austria.statistic.survey.answer.dto.AnswerOptionDto;
-import com.austria.statistic.survey.question.QuestionType;
+import com.austria.statistic.survey.question.domain.QuestionType;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

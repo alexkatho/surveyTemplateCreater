@@ -3,7 +3,7 @@ package com.austria.statistic.survey.domain.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.austria.statistic.survey.question.Question;
+import com.austria.statistic.survey.question.domain.Question;
 
 import lombok.Getter;
 

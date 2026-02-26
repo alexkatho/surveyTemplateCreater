@@ -1,4 +1,4 @@
-package com.austria.statistic.survey.question;
+package com.austria.statistic.survey.question.domain;
 
 public enum QuestionType {
 	TEXT,

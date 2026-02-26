@@ -1,6 +1,6 @@
 package com.austria.statistic.survey.validation.validator;
 
-import com.austria.statistic.survey.question.QuestionType;
+import com.austria.statistic.survey.question.domain.QuestionType;
 import com.austria.statistic.survey.question.dto.QuestionCreateDto;
 import com.austria.statistic.survey.validation.annotation.ValidQuestionsOptions;
 

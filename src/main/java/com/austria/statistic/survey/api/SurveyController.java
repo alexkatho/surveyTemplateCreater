@@ -37,11 +37,11 @@ public class SurveyController {
     @ResponseStatus(HttpStatus.CREATED)
     public SurveyDetailDto create(@RequestBody SurveyCreateDto dto) {
         var survey = createSurvey.create(
-                dto.getTitle(),
-                dto.getDescription(),
+                dto.title(),
+                dto.description(),
                 new SurveyDates(
-                        dto.getStartDate(),
-                        dto.getEndDate()
+                        dto.startDate(),
+                        dto.endDate()
                 )
         );
         return SurveyApiMapper.toDetailDto(survey);
